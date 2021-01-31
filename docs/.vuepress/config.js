@@ -5,7 +5,7 @@
  */
 module.exports = {
   title: '江湖',
-  description: '个人笔记6666',
+  description: '个人笔记',
   themeConfig: {
     displayAllHeaders: true,
     nav: [
