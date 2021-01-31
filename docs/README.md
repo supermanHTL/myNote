@@ -1,7 +1,7 @@
 ---
 home: true
 # heroImage: /hero.png
-heroText: 江湖666
+heroText: 江湖
 tagline: 代码中的江湖
 actionText: 快速上手 →
 actionLink: /base/
