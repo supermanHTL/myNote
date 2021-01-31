@@ -1,6 +1,6 @@
 # 乾坤大挪移第二层《浏览器》
 
-#### 根据网址“？”后面的 key，来获取想对应的 value 值。
+## 根据网址“？”后面的 key，来获取想对应的 value 值。
 
 ```
 function getQueryString(name) {      
@@ -11,11 +11,11 @@ function getQueryString(name) {      
 }
 ```
 
-#### 浏览器为 js 提供方法的对象有：
+## 浏览器为 js 提供方法的对象有：
 
 `window`、`navigator`、`screen`、`location`、`document`
 
-#### 判断手机是否转屏了：
+## 判断手机是否转屏了：
 
 ```
 var evt = "onorientationchange" in window ? "orientationchange" : "resize";
@@ -24,19 +24,19 @@ window.addEventListener(evt, function() {
 }, false);
 ```
 
-#### BOM
+## BOM
 
-##### 窗口关系
+## 窗口关系
 
 - `top` 对象始终指向最上层（最外层）窗口
 - `parent` 对象则始终指向当前窗口的父窗口。如果当前窗口是最上层窗口，则 `parent` 等于 `top` （都等于 `window` ）。
 - `self` 对象，它是终极 `window` 属性，始终会指向 `window` 。实际上， `self` 和 `window` 就是同一个对象。之所以还要暴露 `self` ，就是为了和 `top` 、 `parent` 保持一致
 
-##### 窗口位置
+## 窗口位置
 
 `window` 对象的位置可以通过不同的属性和方法来确定。现代浏览器提供了 `screenLeft` 和`screenTop` 属性，用于表示窗口相对于屏幕左侧和顶部的位置 ，返回值的单位是 CSS 像素。
 
-##### 导航与打开新窗口
+## 导航与打开新窗口
 
 `window.open()` 方法可以用于导航到指定 URL，也可以用于打开新浏览器窗口。
 **const windowObjectReference = window.open(strUrl, strWindowName,[strWindowFeatures]);**
@@ -64,7 +64,7 @@ wroxWin.opener = null;
 
 把 `opener` 设置为 `null` 表示新打开的标签页不需要与打开它的标签页通信，因此可以在独立进程中运行。这个连接一旦切断，就无法恢复了。
 
-##### location 对象
+## location 对象
 
 假设 url 地址为： `http://foouser:barpassword@www.wrox.com:80/WileyCDA/?q= javascript#index`
 | 属性名 | 例子 | 说明 |
@@ -96,7 +96,7 @@ searchParams.delete("q");
 alert(searchParams.toString()); // " num=10&page=3"
 ```
 
-##### navigator 对象
+## navigator 对象
 
 | 属性或方法     | 说明                                                                                                                                 |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
@@ -110,14 +110,14 @@ alert(searchParams.toString()); // " num=10&page=3"
 | `platform`     | 浏览器所在的系统平台，如：`Win32`                                                                                                    |
 | ...            | ...                                                                                                                                  |
 
-##### screen 对象
+## screen 对象
 
 | 属性     | 说明                        |
 | -------- | --------------------------- |
 | `height` | 屏幕像素高度 （分辨率高度） |
 | `width`  | 屏幕像素宽度 （分辨率宽度） |
 
-##### history
+## history
 
 - `history.go()`;
 - `history.back()`;
@@ -139,13 +139,13 @@ alert(searchParams.toString()); // " num=10&page=3"
   ```
 - `replaceState(state, title)`; 调用这个方法不会在历史状态栈中创建新状态，只会重写当前状态。传入的参数与 `pushState()` 的前两个参数相同。
 
-#### Node 节点
+## Node 节点
 
-##### Node 类型
+## Node 类型
 
 **`DOM1`** 级定义了一个 `Node` 接口，这个接口在`JavaScript` 中是作为 `Node` 类型实现的；除了 IE 之外，在其他所有浏览器中都可以访问到这个类型。`JavaScript` 中的所有节点类型都继承自 `Node` 类型，因此所有节点类型都共享着相同的基本属性和方法。
 
-###### 所有节点都具有的属性
+### 所有节点都具有的属性
 
 1、 **`nodeType`** 该属性用于表明节点的类型。节点类型由在 `Node` 类型中定义的下列 12 个数值常量来表示，任何节点类型必居其一：
 
@@ -179,11 +179,11 @@ if (someNode.nodeType == 1){ // 适用于所有浏览器
 4、 `ownerDocument` 该属性指向表示整个文档的文档节点，（即 `#document` ）。通过这个属性，我们可以不必在节点层次中通过层层回溯到达顶端，而是可以直接访问文档节点
 5、`children` 该属性和`childNodes` 类似，只是不包含空白节点
 
-###### 判断是否有子节点方法
+### 判断是否有子节点方法
 
 `hasChildNodes()` ：返回 `Boolean`。比起用 `childNodes.length` 方便的多
 
-###### 操作节点方法
+### 操作节点方法
 
 - `appendChild()` 用于向 `childNodes` 列表的末尾添加一个节点。如果传入到 `appendChild()` 中的节点已经是文档的一部分了，那结果就是将该节点从原来的位置转移到新位置（即，不重复同一节点）。
 
@@ -211,7 +211,7 @@ if (someNode.nodeType == 1){ // 适用于所有浏览器
 
 - 获取第一个或最后一个子节点：父节点的 `firstChild` 和 `lastChild` 属性分别指向其 `childNodes` 列表中的第一个和最后一个节点。其中， `someNode.firstChild` 的值始 终 等 于 `someNode.childNodes[0]` ， 而 `someNode.lastChild` 的 值 始 终 等 于 `someNode.childNodes[someNode.childNodes.length-1]`。
 
-##### Document 类型
+## Document 类型
 
 js 通过`Document`类型表示文档。在浏览器中`document` 对象是`HTMLDocument`（继承自`Document`类型）的一个实例，表示整个`HTML`页面。而且`document` 对象是`window`对象的一个属性，因此可以将其作为全局对象来访问。Document 节点具有以下特征：
 
@@ -222,7 +222,7 @@ js 通过`Document`类型表示文档。在浏览器中`document` 对象是`HTML
 - `ownerDocument` 值为`null`
 - 其子节点可能是一个`DocumentType`（最多一个）、`Element`（对多一个）、`ProcessingInstruction`或`Conment`。
 
-###### document 的属性：
+### document 的属性：
 
 - `documentElement` 为`<html>`的引用
 - `head` 为`<head>`的引用
@@ -270,7 +270,7 @@ pis: `document` 对象上还暴露了几个特殊集合，这些集合也都是 
 - `document.images` 包含文档中所有`<img>`元素（与 `document.getElementsByTagName ("img")`返回的结果相同）。
 - `document.links` 包含文档中所有带 `href` 属性的`<a>`元素。
 
-###### document 方法
+### document 方法
 
 - `getElementById()`根据`id`查找元素，返回元素或`null`
 - `getElementsByTagName()` 标签名查找，返回`HTMLCollection` 对象，作为一个“动态”集合。该对象与`NodeList`非常类似。
@@ -278,7 +278,7 @@ pis: `document` 对象上还暴露了几个特殊集合，这些集合也都是 
 - `querySelector()`
 - `write()`
 
-##### Element 类型
+## Element 类型
 
 `Element` 类型用于表现`XML`或 H`TML`元素，提供了对元素标签名、子节点及特性的访问。`Element` 节点具有以下特征：
 
@@ -322,7 +322,7 @@ pis: `document` 对象上还暴露了几个特殊集合，这些集合也都是 
   previousSibling ）；
   `nextElementSibling` ，指向后一个 Element 类型的同胞元素（ Element 版 nextSibling ）。
 
-##### Text 类型
+## Text 类型
 
 文本节点由 Text 类型表示，包含的是可以照字面解释的纯文本内容。纯文本中可以包含转义后的
 HTML 字符，但不能包含 HTML 代码。 Text 节点具有以下特征：
@@ -354,7 +354,7 @@ alert(newNode.nodeValue);  // " world!"
 alert(element.childNodes.length);  // 2
 ```
 
-##### Comment 类型
+## Comment 类型
 
 注释在 `DOM` 中是通过 `Comment` 类型来表示的。 `Comment` 节点具有下列特征：
 
@@ -368,7 +368,7 @@ alert(element.childNodes.length);  // 2
 
 **创建注释节点**： `document.createComment()`，接收一个参数接注释文本
 
-##### CDATASection 类型
+## CDATASection 类型
 
 `CDATASection`类型只针对基于 `XML` 的文档，表示的是 `CDATA` 区域。与 `Comment` 类似，`CDATASection` 类型继承自 `Text` 类型，因此拥有除 `splitText()` 之外的所有字符串操作方法。
 
@@ -380,7 +380,7 @@ CDATASection 节点具有下列特征：
 - `parentNode` 可能是 `Document` 或 `Element` ；
 - 不支持（没有）子节点。
 
-##### DocumentFragment 类型
+## DocumentFragment 类型
 
 在所有节点类型中，只有 `DocumentFragment` 在文档中没有对应的标记。`DOM` 规定文档片段（`document fragment`）是一种“轻量级”的文档，可以包含和控制节点，但不会像完整的文档那样占用额外的资源。也就是说文档片段是一个容器，用于存储其它节点，然后一次性添加入文档树中，保证了`dom`树渲染的高效性。但是文档片段本身永远不会成为文档树的一部分。 `DocumentFragment` 节点具有下列特征：
 
@@ -409,7 +409,7 @@ ul.appendChild(fragment);
 
 ```
 
-##### Attr 类型
+## Attr 类型
 
 元素的特性在 `DOM` 中以 `Attr` 类型来表示。在所有浏览器中（包括 IE8），都可以访问 `Attr` 类型的构造函数和原型。从技术角度讲，特性就是存在于元素的 `attributes` 属性中的节点。
 特性节点具有下列特征：
@@ -423,7 +423,7 @@ ul.appendChild(fragment);
 
 尽管它们也是节点，但特性却不被认为是 `DOM` 文档树的一部分。开发人员最常使用的是 `getAttribute()` 、 `setAttribute()` 和 `remveAttribute()`方法，很少直接引用特性节点。
 
-##### NodeList
+## NodeList
 
 理解 `NodeList` 及其“近亲” `NamedNodeMap` 和 `HTMLCollection` ，是从整体上透彻理解 `DOM` 的关键所在。这三个集合都是“动态的”；换句话说，每当文档结构发生变化时，它们都会得到更新。因此，它们始终都会保存着最新、最准确的信息。从本质上说，所有 `NodeList` 对象都是在访问 `DOM`文档时实时运行的查询。例如，下列代码会导致无限循环：
 
@@ -443,7 +443,7 @@ for (i=0; i < divs.length; i++){
 `someNode.attributes` 获取 `NamedNodeMap`  集合
 <img :src="$withBase('/imgs/12.jpg')">
 
-##### MutationObserver 接口
+## MutationObserver 接口
 
 使用 `MutationObserver` 可以观察整个文档、`DOM` 树的一部分，或某个元素。此外还可以观察元素属性、子节点、文本，或者前三者任意组合的变化。变化的回调是以一个微任务（异步）方式处理。
 
@@ -460,9 +460,9 @@ myObsever.observe(test, { attributes: true });
 
 _pis: `MutationObserver` (DOM3)是为代替性能不好的 `MutationEvent`(DOM2) 而问世的_
 
-#### DOM 扩展
+## DOM 扩展
 
-##### CSS 类扩展
+## CSS 类扩展
 
 - `getElementsByClassName()` 方法接收一个参数，即包含一个或多个类名的字符串，返回类名中包含相应类的元素的 `NodeList`
 
@@ -475,7 +475,7 @@ _pis: `MutationObserver` (DOM3)是为代替性能不好的 `MutationEvent`(DOM2)
   **toggle(value)** ，如果类名列表中已经存在指定的 value ，则删除；如果不存在，则添加
   **\*pis**：添加了 `classList` 属性之后，除非是完全删除或完全重写元素的 `class` 属性，否则 `className` 属性就用不到了\*
 
-##### 焦点管理
+## 焦点管理
 
 **`document.activeElement`** 返回前拥有焦点的 DOM 元素。默认情况下`document.activeElement` 在页面刚加载完之后会设置为 `document.body` 。而在页面完全加载之前， `document.activeElement` 的值为 `null`
 
@@ -493,7 +493,7 @@ button.focus();
 console.log(document.hasFocus()); // true
 ```
 
-##### 自定义数据属性
+## 自定义数据属性
 
 定义了自定义数据属性后，可以通过元素的 `dataset` 属性来访问。 `dataset` 属性是一个`DOMStringMap` 的实例，包含一组键/值对映射。元素的每个 `data-name` 属性在 `dataset` 中都可以通过 `data-` 后面的字符串作为键来访问（例如，属性 `data-myname` 、 `data-myName` 可以通过 `myname` 访问，但要注意 `data-my-name` 、 `data-My-Name` 要通过 `myName` 来访问）。例如：
 
@@ -507,4 +507,3 @@ let myName = div.dataset.myname;
 div.dataset.appId = 23456;
 div.dataset.myname = "Michael";
 ```
-

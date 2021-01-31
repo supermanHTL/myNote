@@ -12,8 +12,17 @@ module.exports = {
       { text: '首页', link: '/' },
       { text: '武学', link: '/base/' }
     ],
+    // sidebar: {
+    //   '/base/': ['', 'css', 'browser', 'skills', 'question']
+    // }
     sidebar: {
-      '/base/': ['', 'css', 'browser', 'skills', 'question']
+      '/base/': [
+        {
+          title: '基础',
+          collapsable: true,
+          children: ['', 'css', 'browser', 'skills', 'question']
+        }
+      ]
     }
   }
 };
