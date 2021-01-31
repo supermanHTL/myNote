@@ -1,6 +1,6 @@
-# 乾坤大挪移第一层《样式》
+# 第一层《样式》
 
-#### 多行文本超出变省略号
+## 多行文本超出变省略号
 
 ```
 overflow: hidden;     
@@ -10,7 +10,7 @@ display: -webkit-box;     
 -webkit-box-orient: vertical;
 ```
 
-#### 用 css 实现文字被选中时，背景和字体颜色都发生改变：
+## 用 css 实现文字被选中时，背景和字体颜色都发生改变：
 
 ```
 ::selection { background: pink; color: #fff; }
@@ -18,7 +18,7 @@ display: -webkit-box;     
 ::-webkit-selection { background:pink; color: #fff; 
 ```
 
-##### HTML 元素的 style 特性
+### HTML 元素的 style 特性
 
 任何支持 `style` 特性的 `HTML` 元素在 `JavaScript` 中都有一个对应的 `style` 属性。这个 `style` 对象是 `CSSStyleDeclaration` 的实例，包含着通过 `HTML` 的 `style` 特性指定的所有样式信息，但不包含与外部样式表或嵌入样式表经层叠而来的样式。在 `style` 特性中指定的任何 `CSS` 属性都将表现为这个`style` 对象的相应属性。对于使用短划线（分隔不同的词汇，例如 `background-image` ）的 `CSS` 属性名，必须将其转换成驼峰大小写形式，才能通过 `JavaScript` 来访问。
 
@@ -47,7 +47,7 @@ alert(myDiv.style.width); //"10px"
 alert(myDiv.style.height); //"25px"
 ```
 
-##### 计算的样式
+### 计算的样式
 
 虽然 `style` 对象能够提供支持 `style` 特性的任何元素的样式信息，但它不包含那些从其他样式表层叠而来并影响到当前元素的样式信息。“DOM2 级样式”增强了 `document.defaultView` ，提供了`getComputedStyle()` 方法。这个方法接受两个参数：**要取得计算样式的元素**和一个**伪元素字符串**（例如 "`:after`" ）。如果不需要伪元素信息，第二个参数可以是 `null` 。 `getComputedStyle()` 方法返回一个 `CSSStyleDeclaration` 对象（与 `style` 属性的类型相同），其中包含当前元素的所有计算的样式。
 
@@ -79,7 +79,7 @@ alert(computedStyle.border); // 在某些浏览器中是"1px solid black"
 
 pis：`dom`元素上的`style` 属性，也是 `CSSStyleDeclaration` 对象
 
-##### 操作样式表
+### 操作样式表
 
 `CSSStyleSheet` 类型表示的是样式表，包括通过 `<link>`元素包含的样式表和在 `<style>` 元素中定义的样式表，两种获取样式表。
 第一种：`document.styleSheets` 获取的是页面所有的样式表集合（ `StyleSheetList`）
@@ -129,7 +129,7 @@ const sheet = document.styleSheets[0];
 sheet.deleteRule(0);
 ```
 
-#### 最佳实践
+## 最佳实践
 
 **1. 可读性**
 
@@ -220,7 +220,7 @@ if(true) {
   var a = 1, b = 2;
   ```
 
-#### 拖拽上传文件
+## 拖拽上传文件
 
 ```
 <--html-->
@@ -255,4 +255,4 @@ function toAjax(files) {
 }
 ```
 
-#### window.performance 对页面的性能信息的记录
+## window.performance 对页面的性能信息的记录

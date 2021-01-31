@@ -1,6 +1,6 @@
 # 内功心法《基础》
 
-#### 字符串/数组方法小记
+## 字符串/数组方法小记
 
 - `trim()`去除字符串首尾残留的空格
 
@@ -30,16 +30,16 @@ var me = arr.filter(fn);  // 结果是me： 3，4，5；  说明了filter方�
 
 - `Obj.hasOwnProperty('xx')`  返回一个`boolean`，表示`Obj`是否包含'xx'这个属性
 
-#### image 中的 complete 和 onload 属性
+## image 中的 complete 和 onload 属性
 
 - `complete` 属性返回一个布尔值，表示浏览器是否已完成对图像的加载。即，在 onload 方法里面`img.complete` 属性为肯定为`true`，因为图片已经加载完成。
 - `onload` 方法表示图片加载完成后的回调钩子
 
-#### 不同类型比较，true 还是 false 的比较原则
+## 不同类型比较，true 还是 false 的比较原则
 
 两个操作数都是数值，则进行数值比较两个操作数。都是字符串，则比较两个字符串对应的字符编码值。两个操作数有一个是数值，则将另一个转换为数值，再进行数值比较。两个操作数有一个是对象，则先调用`valueOf()`方法或`toString()`方法，再用结果比较
 
-#### Object.preventExtensions()、Object.seal()、Object.freeze()  区别
+## Object.preventExtensions()、Object.seal()、Object.freeze()  区别
 
 **相同**：直接对源对象，造成不可扩展。其返回值就是源对象
 **不同**：
@@ -50,48 +50,48 @@ var me = arr.filter(fn);  // 结果是me： 3，4，5；  说明了filter方�
 
 **由此可见, 锁定深度是一层一层递进的；注意：以上处理后，Object.isExtensible(obj)判断都是返回 false。对象不可扩展。**
 
-#### js 语言的描述
+## js 语言的描述
 
 js 是一门基于对象的，多范式的编程语言。多范式是指多方法的编程风格，如：面向对象编程、面向过程编程、函数式编程。
 
-#### typeof 操作符
+## typeof 操作符
 
 typeof 操作符用来判断数据类型，得到的值是：number\bealoon\object\function\undefined   其中一种，但是注意 typeof null    浏览器给出的是‘object’。因为 null 被认为是一个空对象的引用。
 
-#### js 继承的概述
+## js 继承的概述
 
 js 继承的概述 js 面向对象编程和`java`的不同，`java`的面向对象有两个概念即：**类**和**实例**。
 如：学生就是一个类，小明则是一个实例，则实例继承了类的属性方法。
 `js`则是通过原型来实现面向对象编程，在`js`里一切皆为对象，所以继承也就是把一个对象的原型指向另外一个对象罢了。
 如: 利用`var obj1 = Object.create(obj2)`来创建新对象，此时`obj1`的原型就指向了`obj2`，所以`obj1`拥有了`obj2`的属性和方法，从而实现了继承关系。
 
-#### js 里面一切皆为对象，这里的对象有分两个大类，一个是普通对象，另一个是函数对象。如何区分呢？
+## js 里面一切皆为对象，这里的对象有分两个大类，一个是普通对象，另一个是函数对象。如何区分呢？
 
 用`new Function()`来创建的对象，称之为函数对象，有：`Object、Array、String、Boolean`和普通的`function`。除此之外都是普通对象。
 
-#### 那函数对象和普通对象有何本质上的区别呢？
+## 那函数对象和普通对象有何本质上的区别呢？
 
 函数对象有原型对象`prototype`和原型指针`__proto__`。而普通对象只有原型指针`__proto__` 。
 **概括**：`Function、Array、String、Boolean`的原型继承了`Object`，但是`Object、Array、String、Boolean`确是`Function`的实例
 
-#### Symbol 有感
+## Symbol 有感
 
 `Symbol`表示唯一，主要用于作为对象属性而存在。它不能进行四则运算，可以用显示方法转成字符串和布尔值。作为对象的属性时，用普通的`for....in`或者`for .... of`或者`Object.keys()`等方式是无法获取`Symbol`属性的，必须要用专用的方法来获取对象里面所有的`Symbol`属性，方法为:
 `Object.getOwnPropertySymbols( obj )` 只获取 obj 对象里面的`symbol` 键的名称集合
 `Reflect.ownKeys( obj )` 获取 obj 对象，所有的键名称集合，包括普通属性和`symbol`的属性
 
-#### 面向对象面向对象和面向过程概述
+## 面向对象面向对象和面向过程概述
 
 **面向过程**：亲力亲为、事无巨细、面面俱到、步步紧跟
 **面向对象**：找一个对象指挥得到结果，也就是直接使用一个对象，即面向对象的“面向”相当于“使用”的意思，也就是使用对象。面向对象开发其实就是对面向过程的封装的一个过程。
 
-#### 面向对象特性：
+## 面向对象特性：
 
 1. 抽象性：1、抽取核心数据 2、不在特定条件下，不知道该对象描述的是什么
 2. 封装性：对象将数据与方法封装起来，方法将过程（面向过程）封装
 3. 继承性：把别人的拿来成为自己的编码
 
-#### 从某个数值区间获取随机数公式
+## 从某个数值区间获取随机数公式
 
 **公式**：number = Math.floor(Math.random() \* **total_number_of_choices** + **first_possible_value**)
 **total_number_of_choices**： 这个区间一共有几个数值
@@ -102,7 +102,7 @@ js 继承的概述 js 面向对象编程和`java`的不同，`java`的面向对�
 const  num = Math.floor( Math.random() * 9 + 2 )
 ```
 
-#### js 进制之间的互相转换
+## js 进制之间的互相转换
 
 将 10 进制转换为任何进制使用`toString(radix)`。需要将非 10 进制转换为 10 进制，推荐`parseInt(str,radix)`。
 `number.toString(radix)`：表示将该数字转为 `radix` 进制。
@@ -119,15 +119,15 @@ parseInt(str, 2); //   8
 
 ```
 
-#### 位操作符
+## 位操作符
 
 - 按位非：用波浪符（~）表示，最终效果是对数值取反并减 1。如：`~-1 === 0` 为 `true`
 
-#### 什么是渐进式框架（如：vue）？
+## 什么是渐进式框架（如：vue）？
 
 框架提供了 N 多功能，你可以选择性的使用你想用的（如：`vuex`、`vue-router`）。并非强制使用“全家桶”
 
-#### 命令式渲染（如：模板引擎）和声明式渲染（如：vue）区别？
+## 命令式渲染（如：模板引擎）和声明式渲染（如：vue）区别？
 
 **命令式**：需要以具体代码表达在哪里做什么？它是如何实现的  
 **声明式**：只需要声明在哪里需要做什么？不需要关心具体怎么实现的  
@@ -147,11 +147,11 @@ let arr2=arr.map(item=>item*2)
 console.log(arr2)
 ```
 
-#### 位操作符
+## 位操作符
 
 ECMAScript 中所有数值都以`IEEEE-754 64`位格式存储，但位操作符并不是直接操作`64`位的值，而是先将`64`位的值转换成`32`位的整数，然后执行操作，最后再将结果转回`64`位。
 
-#### RegExp 实例属性
+## RegExp 实例属性
 
 - **global**：布尔值，表示是否设置了`g`标志
 - **ignoreCase**：布尔值，表示是否设置了`i`标识
@@ -168,7 +168,7 @@ console.log(pattern.lastIndex);  // 0
 console.log(pattern.source);  // \[bc\]at
 ```
 
-#### RegExp 实例方法
+## RegExp 实例方法
 
 - **exec()**：改方法专门为捕获组而设计的。接收一个字符串，然后返回一个匹配项信息的数组，或者`null`。数组中额外包含了两个属性，`index`和`input`。`index`表示匹配项在字符串中的位置，即索引。`input`表示当前完整的字符串，即`exec`的参数。
   注意：`exec`方法，在不管有没有设置`g`标识，都会进行一次完整的匹配，再返结果。
@@ -197,7 +197,7 @@ console.log(pattern.source);  // \[bc\]at
       p.lastIndex; // 0
 ```
 
-#### RegExp 构造函数属性
+## RegExp 构造函数属性
 
 `RegExp.$1`、`RegExp.$2` ······ `RegExp.$9` 分别用于存储`第一`、`第二` ······ `第九`个匹配的捕获组。在调用 `exec()` 或 `test()` 方法时，这些属性会被自动填充。
 
@@ -214,9 +214,9 @@ if(pattern.test(text)) {
 
 **注意 RegExp 构造函数的所有属性都没有任何 Web 标准出处，因此不要在生产环境中使用它们。**
 
-#### Function
+## Function
 
-##### 函数内部属性
+### 函数内部属性
 
 `arguments` 类数组对象，包含传入函数的所有参数。这对象还有一个叫`callee`的属性（**严格模式或箭头函数均无法使用**），该属性是一个指针，指向拥有这个`arguments`对象的函数。
 
@@ -274,13 +274,13 @@ class A {
 }
 ```
 
-##### 函数属性
+### 函数属性
 
     1. `length` 表示函数型参个数
     2. `prototype` 在`ECMAScript`中的引用类型而言，`prototype` 是保存他们所有实例方法的真正所在。    `prototype`属性是不可枚举的，因此用`for-in` 无法发现。
     3. `caller` 这个属性保存着调用当前函数的函数的引用（**严格模式或箭头函数均无法使用**），如果是在全局作用域中调用当前函数，它的值为null。
 
-##### 函数方法
+### 函数方法
 
 - `apply()` 和 `call()`这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内`this`对象的值。不同在于入参形式，`apply` 接收数组，`call` 需要分别传入。
 
@@ -322,12 +322,12 @@ let objectSayColor = sayColor.bind(o); // 返回新的函数实例
 objectSayColor(); // blue
 ```
 
-##### 箭头函数
+### 箭头函数
 
 箭头函数虽然语法简洁，但也有很多场合不适用。箭头函数不能使用 `arguments`、`super` 和
 `new.target`，也不能用作构造函数。此外，箭头函数也没有 `prototype` 属性。
 
-##### arguments 不同情景表现不同
+### arguments 不同情景表现不同
 
 情景 1：非严格模式下，修改参数的值，`arguments`的值也会一起同步
 
@@ -361,11 +361,11 @@ fn(); // 666, undefined
 
 **总结**：`arguments` 的值和 函数定义的参数，并非访问同一内存地址，只是在某种程度上做到了同步而已。`arguments` 只关心调用函数时，实际传入的参数值。
 
-##### js 函数无重载
+### js 函数无重载
 
 ECMAScript 函数不能像传统编程那样重载。在其他语言比如 Java 中，一个函数可以有两个定义，只要签名（接收参数的类型和数量）不同就行。ECMAScript 函数没有签名，因为参数是由包含零个或多个值的数组表示的。没有函数签名，自然也就没有重载。
 
-##### 尾调用优化
+### 尾调用优化
 
 ECMAScript 6 规范新增了一项内存管理优化机制，让 JavaScript 引擎在满足条件时可以重用栈帧。具体来说，这项优化非常适合“尾调用”。
 **尾调用**：指外部函数的返回值是一个内部函数的返回值。如下：
@@ -427,7 +427,7 @@ function outerFunction(condition) {
 
 ```
 
-#### 基本包装类型
+## 基本包装类型
 
 为了便于操作基本类型值`ECMAScript`提供了 3 个特殊引用类型：`Boolean`、`Number`、`String`。每当读取一个基本类型值的时候，后台会创建一个对应的基本包装类型的对象，从而让我们能够调用一些方法来操作这些数据。如下：
 
@@ -446,7 +446,7 @@ const s2 = s1.substring(2);   // 此步为 读取模式
 
 **注意**：引用类型与基本包装类型的主要区别就是对象的生存期。使用`new`操作符创建的引用类型的实例，在执行流离开当前作用域之前都一直保存在内存中。而自动创建的基本包装类型的对象，则只存在于一行代码的执行瞬间，然后立即被销毁。这意味着我们不能在运行时为基本类型值添加属性和方法。
 
-#### String
+## String
 
 - **字符方法**
   `chatAt()` 和`chartCodeAt()` 两个用于访问字符串中特定字符串的方法，都是接收一个参数，基于 `0` 的字符位置。
@@ -546,13 +546,13 @@ var a = 'ab😊';
 a.length; // 为 4
 ```
 
-#### encodeURI() 和 encodeURIComponent()
+## encodeURI() 和 encodeURIComponent()
 
 `encodeURI()` 主要用于整个 URI 进行编码
 `encodeURIComponent()`主要用于对 URI 中的某一段进行编码
 使用 `encodeURI()`编码后的结果是除了**空格**之外的其他字符都原封不动，只有**空格**被替换成 `%20`。而 `encodeURIConponent()` 方法会对所有**非字母数字**字符进行编码。这也正是可以对整个`URI`使用`encodeURI()`,而只能对附加在现有`URI`后面的字符串使用`encodeURIConpoent()` 的原因了。
 
-#### eval() 像是一个完整的 ECMAScript 解析器
+## eval() 像是一个完整的 ECMAScript 解析器
 
 `eval()` 只接受一个参数，即要执行的 `ECMAScript` 字符串。
 
@@ -581,9 +581,9 @@ const msg = "hello";
 eval("console.log(msg)");  // hello
 ```
 
-#### Array
+## Array
 
-##### Array.from( arrayLike [, mapFn[, thisArg]] )
+### Array.from( arrayLike [, mapFn[, thisArg]] )
 
 方法从一个类似数组或可迭代对象创建一个新的，浅拷贝的数组实例。
 参数描述：
@@ -610,7 +610,7 @@ Array.from([1, 2, 3], x => x + x);  // [2, 4, 6]
 
 ```
 
-##### Array.of()
+### Array.of()
 
 可以把一组参数转换为数组。
 
@@ -618,9 +618,9 @@ Array.from([1, 2, 3], x => x + x);  // [2, 4, 6]
 console.log(Array.of(1, 2, 3, 4)); // [1, 2, 3, 4]
 ```
 
-##### Array.isArray( arr ) 确定一个值是否为数组
+### Array.isArray( arr ) 确定一个值是否为数组
 
-#### 二进制家族：Blob、ArrayBuffer 和 Buffer
+## 二进制家族：Blob、ArrayBuffer 和 Buffer
 
 **关系图：**
 <img :src="$withBase('/imgs/4.jpg')">
@@ -629,7 +629,7 @@ console.log(Array.of(1, 2, 3, 4)); // [1, 2, 3, 4]
 **`ArrayBuffer`**：前端的一个通用的二进制缓冲区，类似数组，但在 API 和特性上却有诸多不同
 **`Buffer`**：Node.js 提供的一个二进制缓冲区，常用来处理 I/O 操作
 
-##### Blob
+### Blob
 
 我们首先来介绍`Blob`，`Blob`是用来支持文件操作的。简单的说：在`JS`中，有两个构造函数 `File` 和 `Blob`, 而`File`继承了所有`Blob`的属性。所以在我们看来，`File`对象可以看作一种特殊的`Blob`对象。
 在前端工程中，我们在哪些操作中可以获得 File 对象呢？
@@ -729,7 +729,7 @@ document.getElementById('f').addEventListener('change', function (e) {
 **FileReader.readAsArrayBuffer(Blob)**： 将`Blob`转为`ArrayBuffer`格式数据
 **FileReader.readAsDataURL()**: 将`Blob`转化为`Base64`格式的`Data URL`
 
-##### ArrayBuffer
+### ArrayBuffer
 
 让我们用一张图看下`ArrayBuffer`的大体的功能
 <img :src="$withBase('/imgs/7.jpg')">
@@ -778,7 +778,7 @@ view.setInt8(2, 42);
 console.log(view.getInt8(2));// 输出: 42
 ```
 
-##### Buffer
+### Buffer
 
 `Buffer`是`Node.js`提供的对象，前端没有。 它一般应用于`IO`操作，例如接收前端请求数据时候，可以通过以下的`Buffer`的`API`对接收到的前端数据进行整合
 <img :src="$withBase('/imgs/10.jpg')">
@@ -818,7 +818,7 @@ xhr.send("asdasdsadfsdfsadasdas");
 asdasdsadfsdfsadasdas
 ```
 
-#### Map
+## Map
 
 `Map` 的大多数特性都可以通过 `Object` 类型实现，但二者之间还是存在一些细微的差异，`Map`可以用对象作为健。
 初始化之后，可以使用 `set()`方法再添加键/值对。另外，可以使用 `get()`和 `has()`进行查询，可
@@ -898,7 +898,7 @@ console.log([...m]); // [ [ key1,val1 ],[ key2,val2 ],[ key3,val3 ] ]
 
 ```
 
-#### WeakMap
+## WeakMap
 
 `WeakMap` 是 `Map` 的“兄弟”类型，其 `API` 也是 `Map` 的子集。`WeakMap` 中的“weak”（弱），描述的是 `JavaScript` 垃圾回收程序对待“弱映射”中键的方式。
 弱映射中的键只能是 `Object` 或者继承自 `Object` 的类型，这些键不属于正式的引用，不会阻止垃圾回收。也就是说一旦作为 key 的对象被删除，则这个对象就会被销毁。因为`WeakMap`的引用，不会阻止它被回收。如果是 `Map` 则该对象还会被保存在内存中。
@@ -920,7 +920,7 @@ const wm.set( ele, '这是一个dom节点多为key' )
 
 ```
 
-#### Set
+## Set
 
 初始化之后，可以使用 `add()`增加值，使用 `has()`查询，通过 `size`取得元素数量，以及使用 `delete()`和 `clear()`删除元素
 
@@ -973,14 +973,14 @@ const s = new Set(["val1", "val2", "val3"]);
 console.log([...s]); // ["val1", "val2", "val3"]
 ```
 
-#### WeakSet
+## WeakSet
 
 `WeakSet` 中的“weak”（弱），描述的是 `JavaScript` 垃圾回收程序对待“弱集合”中值的方式。意思就是，这些值不属于正式的引用，不会阻止垃圾回收。即：如果集合中的对象，被删除则会被回收。
 弱集合中的值只能是 `Object` 或者继承自 `Object` 的类型
 
 _pis: `weakSet` 集合不能迭代_
 
-#### ECMAScript 中有两种属性：数据属性和访问器属性
+## ECMAScript 中有两种属性：数据属性和访问器属性
 
 - **数据属性** ：数据属性包含一个数据值的位置。在这个位置可以读取和写入值。数据属性有 4 个描述其行为的特性。 1.`Configurable`：表示能否通过 `delete` 删除属性从而重新定义属性，能否修改属性的特
   性，或者能否把属性修改为访问器属性，默认是 `true` 2.`Enumerable`：表示能否通过 `for-in` 循环返回属性，默认值是 `true` 3.`Writable`：表示能否修改属性的值。默认值是 `true` 4.`Value`：包含这个属性的数据值。读取属性值的时候，从这个位置读；写入属性值的时候，
@@ -998,7 +998,7 @@ _pis: `weakSet` 集合不能迭代_
 - **读取属性的特性**
   用 `Object.getOwnPropertyDescriptor()` 方法，可以取得给定属性的描述符。这个方法接收两个参数：**属性所在的对象**和**要读取其描述符的属性名称**。返回值是一个对象，如果是访问器属性，这个对象的属性有 `configurable` 、 `enumerable` 、 `get` 和 `set` ；如果是数据属性，这个对象的属性有 `configurable` 、 `enumerable` 、 `writable` 和 `value` 。
 
-#### for-in 与 Object.keys() 所能枚举的属性
+## for-in 与 Object.keys() 所能枚举的属性
 
 **`for-in`**： 可以遍历对象的**实例属性**或者**原型上**的**可以枚举**属性
 **`Object.keys()`：**只返回**实例属性**上可枚举的`key`值
@@ -1010,14 +1010,14 @@ _pis: `weakSet` 集合不能迭代_
 
 总结：在以上的迭代中，只有`Object.getOwnPropertySymbols()`方法能得到`symbol` 的属性。在正常的迭代中，是不会被获取到。
 
-#### 判断某个属性，是否存在于某对象的方法
+## 判断某个属性，是否存在于某对象的方法
 
 - 属性  `in`   对象
 - `obj.hasOwnProperty()`。
 - `Reflect.has( obj, k)` 返回 `true` /`false`
   **区别**：都是返回一个布尔值，`in` 操作符和`Reflect.has()` 查找的范围包括了原型链和对象实例，`obj.hasOwnProperty()`查找的范围只是对象实例，不包含原型链的属性
 
-#### 用 new 操作符调用构造函数，创建对象。历经 5 个步骤
+## 用 new 操作符调用构造函数，创建对象。历经 5 个步骤
 
 1. 创建一个新对象
 2. 这个新对象内部的`[[Prototype]]` 特性被赋值为构造函数的 `prototype` 属性。
@@ -1025,9 +1025,9 @@ _pis: `weakSet` 集合不能迭代_
 4. 执行构造函数内部的代码（给新对象添加属性）。
 5. 如果构造函数返回非空对象，则返回该对象；否则，返回刚创建的新对象。
 
-#### 继承
+## 继承
 
-##### 对象伪装（经典继承）
+### 对象伪装（经典继承）
 
 在子类构造函数中通过 apply()或者 call()调用父类构造函数。
 缺点：只实现了实例属性上的继承，所以父类方法不能定义到 prototype 上。
@@ -1045,7 +1045,7 @@ _pis: `weakSet` 集合不能迭代_
     const instance = new SubType();
 ```
 
-##### 组合继承（伪经典）
+### 组合继承（伪经典）
 
 使用原型链继承原型上的属性和方法，而通过盗用构造函数继承实例属性。
 缺点：
@@ -1073,7 +1073,7 @@ _pis: `weakSet` 集合不能迭代_
    const instance1 = new SubType("Nicholas", 29);
 ```
 
-##### 原型式继承
+### 原型式继承
 
 你有一个对象，想在它的基础上再创建一个新对象。ECMAScript 5 通过增加 Object.create() 方法将原型式继承的概念规范化了。
 
@@ -1104,7 +1104,7 @@ _pis: `weakSet` 集合不能迭代_
    anotherPerson.sayHi();  // "hi"
 ```
 
-##### 寄生式组合继承（寄生式组合继承可以算是引用类型继承的最佳模式）
+### 寄生式组合继承（寄生式组合继承可以算是引用类型继承的最佳模式）
 
 通过对象伪装来继承父类属性，使用寄生式继承来继承父类原型。
 
@@ -1137,7 +1137,7 @@ _pis: `weakSet` 集合不能迭代_
     }
 ```
 
-#### 确定原型和实例的关系
+## 确定原型和实例的关系
 
 - `instanceof`
 
@@ -1151,7 +1151,7 @@ p instanceof Person; // true|false
 Person.prototype.isPrototypeOf(p); // true|false
 ```
 
-#### Object.getPrototypeOf(） 与 Object.setPrototypeOf(）
+## Object.getPrototypeOf(） 与 Object.setPrototypeOf(）
 
 - `Object.getPrototypeOf( obj )` 获取 obj 的内部特性`[[Prototype]]` 的值（也就是在浏览器中`obj.__proto__`的值）
   ```
@@ -1164,11 +1164,11 @@ Person.prototype.isPrototypeOf(p); // true|false
 
   注意：`Object.setPrototypeOf()` 可能会严重影响代码性能。为避免使用 `Object.setPrototypeOf()` 可能造成的性能下降，可以通过 `Object.create()` 来创建一个新对象。达到相同目的。
 
-#### 闭包
+## 闭包
 
 闭包是指有权访问另一个函数作用域中的变量的函数。（创建闭包的常见方式，就是在一个函数内部创建另一个函数）
 
-#### 一个函数被调用时，里面发生了什么（执行环境、作用域链、活动对象）
+## 一个函数被调用时，里面发生了什么（执行环境、作用域链、活动对象）
 
 当某个函数被调用时，会创建一个**执行环境**（`execution context`）及相应的**作用域链**。然后，使用 `arguments` 和其他命名参数的值来初始化函数的**活动对象**（`activation object`）。但在作用域链中，外部函数的活动对象始终处于第二位，外部函数的外部函数的活动对象处于第三位，……直至作为作用域链终点的全局执行环境。
 
@@ -1197,7 +1197,7 @@ compareNames = null;
 调用 `compareNames()`的过程中产生的作用域链之间的关系，如下图
 <img :src="$withBase('/imgs/11.png')">
 
-#### this 对象
+## this 对象
 
 `this` 对象是在运行时基于函数的执行环境绑定的：在全局函数中， this 等于 `window` ，而当函数被作为某个对象的方法调用时， `this` 等于那个对象。不过，**匿名函数的执行环境具有全局性，因此其 `this` 对象通常指向 `window`**。
 
@@ -1230,12 +1230,12 @@ var object = {
 alert(object.getNameFunc()()); //"My Object"
 ```
 
-#### 垃圾回收机制
+## 垃圾回收机制
 
 - 标记清除（普遍使用）
 - 引用计次
 
-#### 元素大小
+## 元素大小
 
 - 偏移量
   `offsetHeight` ：元素在垂直方向上占用的空间大小，以像素计。包括元素的高度、（可见的）
@@ -1283,9 +1283,9 @@ alert(object.getNameFunc()()); //"My Object"
   返回果如下：
   <img :src="$withBase('/imgs/16.png')">
 
-  #### DOM 遍历
+  ## DOM 遍历
 
-###### 方法一： `NodeIterator`
+### 方法一： `NodeIterator`
 
 通过 `document.createNodeIterator(root[, whatToShow[, filter]])` 方法创建`NodeIterator`实例，参数描述：
 **root**：遍历起始处的根节点
@@ -1304,7 +1304,7 @@ while (node !== null) {
 }
 ```
 
-###### 方法二： `TreeWalker`
+### 方法二： `TreeWalker`
 
 调用 `document.createTreeWalker()` 方法来创建，这个方法接收与`document.createNodeIterator()` 同样的参数。`TreeWalker` 是 `NodeIterator` 的高级版。除了包含同样的 `nextNode()` 、 `previousNode()` 方法，`TreeWalker` 还添加了如下在 DOM 结构中向不同方向遍历的方法。
 
@@ -1314,9 +1314,9 @@ while (node !== null) {
 - nextSibling() ，遍历到当前节点的下一个同胞节点。
 - previousSibling() ，遍历到当前节点的上一个同胞节点。
 
-#### DOM 范围
+## DOM 范围
 
-##### 选择范围
+### 选择范围
 
 通过 `document.createRange()` 方法可以创建一个 DOM 范围对象
 
@@ -1328,7 +1328,7 @@ while (node !== null) {
   `setStart( someDom, startOffset )` 设置范围起点
   `setEnd( someDom, endOffset )` 设置范围终点
 
-##### 操作范围（Range 实例方法）
+### 操作范围（Range 实例方法）
 
 **`deleteContents()`** 从文档中删除范围包含的节点
 **`extractContents()`** 跟 `deleteContents()`类似，也会从文档中移除范围选区。但不同的是，`extractContents()`方法返回范围对应的文档片段。这样，就可以把范围选中的内容插入文档中其他地方。
@@ -1355,14 +1355,14 @@ range.deleteContents();  // <span>111</span> 节点被删除
 
 ```
 
-#### 事件
+## 事件
 
-##### DOM 事件流
+### DOM 事件流
 
 DOM2 Events 规范规定事件流分为 3 个阶段：事件捕获、到达目标和事件冒泡。
 通常建议使用事件冒泡，特殊情况下可以使用事件捕获。现代浏览器添加事件处理的时候，默认也是冒泡。如使用 `addEventListener()` 第三个参数 默认 `false`，即为冒泡。
 
-##### 事件 之 event 对象
+### 事件 之 event 对象
 
 **以下 “现代浏览器”也包含了 IE9、以及 9+。**
 
@@ -1484,7 +1484,7 @@ document.body.onclick = function(event){
     };
   ```
 
-##### 事件类型
+### 事件类型
 
 Web 浏览器中可以发生很多种事件。发生事件的类型决定了事件对象中会保存什么信息。DOM3 Events 定义了如下事件类型。
 
@@ -1498,7 +1498,7 @@ Web 浏览器中可以发生很多种事件。发生事件的类型决定了事�
 
 _pis：DOM3 Events 在 DOM2 Events 基础上重新定义了事件，并增加了新的事件类型。所有主流浏览器都支持 DOM2 Events 和 DOM3 Events。_
 
-##### 用户界面事件（`UIEvent`）
+### 用户界面事件（`UIEvent`）
 
 - **load 事件** `JavaScript` 中最常用的一个事件就是 `load` 。当页面完全加载后（包括所有图像、JavaScript 文件、CSS 文件等外部资源），就会触发 `window` 上面的 `load` 事件。有两种定义 `onload` 事件处理程序的方式。
   第一种方式是使用如下所示的 `JavaScript` 代码：
@@ -1518,14 +1518,14 @@ _pis：DOM3 Events 在 DOM2 Events 基础上重新定义了事件，并增加了
 
 - **scroll 事件** 监听对象可 `window` ，可**标签元素**（即，容器元素）。
 
-##### 焦点事件
+### 焦点事件
 
 `blur` ：在元素失去焦点时触发。这个事件不会冒泡；
 `focus` ：在元素获得焦点时触发。这个事件不会冒泡；
 `focusin` ：在元素获得焦点时触发。这个事件与 HTML 事件 `focus` 等价，但它**冒泡**。
 `focusout` ：在元素失去焦点时触发。这个事件是 HTML 事件 `blur` 的通用版本,但它**冒泡**。
 
-##### 鼠标事件 （event）- 坐标
+### 鼠标事件 （event）- 坐标
 
 - 客户区坐标位置 `clientX`和`clientY`
   鼠标事件都是在浏览器视口中的特定位置上发生的。这个位置信息保存在事件对象的`clientX` 和`clientY` 它们的值表示事件发生时鼠标指针在视口中的水平和垂直坐标。
@@ -1550,7 +1550,7 @@ _pis：DOM3 Events 在 DOM2 Events 基础上重新定义了事件，并增加了
   元素上
   获取滚动条位置：`window.pageYOffset` 、`window.scrollY` 、`document.body.scrollTop`。前两个都只能用在 window，最后一个可以用在 dom 元素
 
-##### 鼠标事件（event） - 修改键
+### 鼠标事件（event） - 修改键
 
 修改键就是 `Shift`、`Ctrl`、`Alt` 和 `Meta`（在 `Windows`键盘中是 `Windows`键，在苹果机中是 `Cmd` 键），它们经常被用来修改鼠标事件的行为。`DOM`为此规定了 4 个属性，表示这些修改键的状态： `shiftKey` 、 `ctrlKey` 、 `altKey` 和 `metaKey` 。这些属性中包含的都是布尔值，如果相应的键被按下了，则值为 `true`，否则值为 `false` 。
 
@@ -1561,7 +1561,7 @@ myDom.addEventListener('click',(event) => {
 
 ```
 
-##### 鼠标事件（event） - 鼠标按钮
+### 鼠标事件（event） - 鼠标按钮
 
 对于 `mousedown` 和 `mouseup` 事件来说，则在其 `event` 对象存在一个 `button` 属性，表示按下或释放的按钮。`button` 属性可能有如下 3 个值：
 **0** 表示主鼠标按钮（左键）
@@ -1570,7 +1570,7 @@ myDom.addEventListener('click',(event) => {
 
 **ps**：一组的 `mousedown` 和 `mouseup` 事件等于一次 `click`事件。规范在 `event` 对象中还提供了 `detail` 属性，用于给出有关事件的更多信息。对于鼠标事件来说， `detail` 中包含了一个数值，表示在给定位置上发生了多少次单击。在同一个元素上相继地发生一次 `mousedown` 和一次 `mouseup` 事件算作一次单击。 `detail` 属性从 **1** 开始计数，每次单击发生后都会递增。如果鼠标在 `mousedown` 和 `mouseup` 之间移动了位置，则 `detail` 会被重置为 **0** 。
 
-##### 键盘与文本事件
+### 键盘与文本事件
 
 `keydown` ：当用户按下键盘上的任意键时触发，而且如果按住不放的话，会重复触发此事件。
 `keypress` ：当用户按下键盘上的**字符键**时触发，而且如果按住不放的话，会重复触发此事件。按下 `Esc`键也会触发这个事件。（_试了下，发现只有英文输入法，输入时才会触发事件_）
@@ -1579,7 +1579,7 @@ myDom.addEventListener('click',(event) => {
 
 在发生 `keydown` 或 `keyup` 事件时， `event` 对象的 `keyCode` 属性中会包含一个代码，与键盘上一个特定的键对应。（如 `keyCode`为`13`，则表示 **回车键 Enter**）
 
-##### DOM 变动事件
+### DOM 变动事件
 
 `DOMSubtreeModified` ：在 DOM 结构中发生任何变化时触发。这个事件在其他任何事件触发
 后都会触发。
@@ -1588,7 +1588,7 @@ myDom.addEventListener('click',(event) => {
 `DOMAttrModified`：在特性被修改之后触发。
 `DOMCharacterDataModified` ：在文本节点的值发生变化时触发
 
-##### HTML5 事件
+### HTML5 事件
 
 - `contextmenu` 事件
   通过单击鼠标右键可以调出上下文菜单。（在 `Windows` 中，是右键单击；在 `Mac` 中，是 `Ctrl+单击`）
@@ -1625,7 +1625,7 @@ myDom.addEventListener('click',(event) => {
 - `hashchange` 事件
   `HTML5` 新增了 `hashchange` 事件，以便在 `URL` 的参数列表（及 `URL` 中“`#`”号后面的所有字符串）发生变化时通知开发人员。必须要把 `hashchange` 事件处理程序添加给 `window` 对象，然后 `URL` 参数列表只要变化就会调用它。此时的 `event` 对象应该额外包含两个属性：`oldURL` 和 `newURL` 。这两个属性分别保存着参数列表变化前后的完整 `URL`
 
-##### 事件之-内存和性能
+### 事件之-内存和性能
 
 由于事件处理程序可以为现代 `Web` 应用程序提供交互能力，因此许多开发人员会不分青红皂白地向页面中添加大量的处理程序。在创建 `GUI` 的语言（如 `C#`）中，为 `GUI` 中的每个按钮添加一个 `onclick`事件处理程序是司空见惯的事，而且这样做也不会导致什么问题。可是在 `JavaScript` 中，添加到页面上的事件处理程序数量将直接关系到页面的整体运行性能。导致这一问题的原因是多方面的。首先，每个函数都是对象，都会占用内存；内存中的对象越多，性能就越差。其次，必须事先指定所有事件处理程序而导致的 `DOM`访问次数，会延迟整个页面的交互就绪时间。事实上，从如何利用好事件处理程序的角度出发，还是有一些方法能够提升性能的。
 
@@ -1637,7 +1637,7 @@ myDom.addEventListener('click',(event) => {
   `btn.onclick = function(){ //先执行某些操作 btn.onclick = null; // 移除事件处理程序 document.getElementById("myDiv").innerHTML = "Processing..."; };`
   2、就是卸载页面的时候。如果在页面被卸载之前没有清理干净事件处理程序，那它们就会滞留在内存中。每次加载完页面再卸载页面时（可能是在两个页面间来回切换，也可以是单击了“刷新”按钮），内存中滞留的对象数目就会增加，因为事件处理程序占用的内存并没有被释放。一般来说，最好的做法是在页面卸载之前，先通过 `onunload` 事件处理程序移除所有事件处理程序。我们可以把它想象成：只要是通过 `onload` 事件处理程序添加的东西，最后都要通过 `onunload` 事件处理程序将它们移除。
 
-##### 模拟事件
+### 模拟事件
 
 可以在 `document`对象上使用 `createEvent()` 方法创建 `event` 对象。这个方法接收一个参数，即表示要创建的事件类型的字符串。在 `DOM2` 级中，所有这些字符串都使用英文复数形式，而在 `DOM3`级中都变成了单数。这个字符串可以是下列几字符串之一。
 **`UIEvent`** ：一般化的 `UI` 事件。鼠标事件和键盘事件都继承自 `UI`事件。`DOM2` 级中是`UIEvents`
@@ -1669,9 +1669,9 @@ someNode.dispatchEvent(event);  // 元素触发自定义事件
 输出结果：
 <img :src="$withBase('/imgs/18.jpg')">
 
-#### 表单脚本
+## 表单脚本
 
-##### 提交表单
+### 提交表单
 
 使用 `<input>` 或 `<button>` 都可以定义提交按钮，只要将其`type`特性的值设置为 "`submit`" 即可，而图像按钮则是通过将 `<input>` 的 `type` 特性值设置为"`image`" 来定义的。因此，只要我们单击以下代码生成的按钮，就可以提交表单。
 
@@ -1695,7 +1695,7 @@ var form = document.getElementById("myForm");
 form.submit();  // 不会触发 表单的submit事件。直接提交表单
 ```
 
-##### 重置表单
+### 重置表单
 
 在用户单击重置按钮时，表单会被重置。使用 `type` 特性值为 "`reset`" 的 `<input>` 或 `<button>` 都可以创建重置按钮
 
@@ -1717,7 +1717,7 @@ form.reset(); // 会触发表单的 reset 事件
 
 与调用 `submit()` 方法不同，调用 `reset()` 方法会像单击重置按钮一样触发 `reset` 事件。
 
-##### 表单字段
+### 表单字段
 
 除了可以像访问页面中的其他元素一样，使用原生 `DOM` 方法访问表单元素。还可以使用表单的`elements` 属性，该属性是该表单中所有表单元素（字段）的集合。每个表单字段在 `elements`集合中的顺序，与它们出现在标记中的顺序相同，可以按照**位置**和 `name` 特性来访问它们。
 
@@ -1733,7 +1733,7 @@ var field2 = form.elements["textbox1"];
 var fieldCount = form.elements.length;
 ```
 
-##### 选择文本
+### 选择文本
 
 **select() 方法**
 文本框都支持 `select()` 方法，这个方法用于选择文本框中的所有文本。在实践中通过这个方法，用户可以快速清空文本框内容，提升表单的易用性。
@@ -1769,7 +1769,7 @@ inputDow.setSelectionRange(0, 3);  // "Hel"
 inputDow.setSelectionRange(4, 7);  // "o w"
 ```
 
-##### 操作剪贴板
+### 操作剪贴板
 
 **Dom 元素 剪贴板事件：**
 `copy` ：在发生复制操作时触发。
@@ -1793,7 +1793,7 @@ inputDom.addEventListener('paste',function(event) {
 })
 ```
 
-##### 富文本编辑
+### 富文本编辑
 
 - **实现富文本方式有两种：**
   **第一种**：页面中嵌入一个包含空 HTML 页面的 `iframe` 通过设置 `document`的`designMode` 属性，这个空白的 `HTML` 页面可以被编辑，而编辑对象则是该页面 `<body>` 元素的 `HTML` 代码。`designMode` 属性有两个可能的值： "`off`" （默认值）和 "`on`" 。在设置为 "`on`" 时，整个文档都会变得可以编辑（显示插入符号），然后就可以像使用字处理软件一样，通过键盘将文本内容加粗、变成斜体，等等。
@@ -1847,7 +1847,7 @@ inputDom.addEventListener('paste',function(event) {
 
   <img :src="$withBase('/imgs/20.png')">
 
-#### Canvas
+## Canvas
 
 `2D` 上下文的两种基本绘图操作是填充和描边。填充，就是用指定的样式（颜色、渐变或图像）填充图形；描边，就是只在图形的边缘画线。操作的结果取决于两个属性：`fillStyle` 和 `strokeStyle`。这两个属性的值可以是字符串、渐变对象或模式对象，而且它们的默认值都是"`#000000`"。
 
@@ -1859,9 +1859,9 @@ inputDom.addEventListener('paste',function(event) {
 
 `3D` `webGL` `ArrayBuffer` `DataVeiw`
 
-#### HTML5 脚本编程
+## HTML5 脚本编程
 
-##### 跨文档消息传递 postMessage
+### 跨文档消息传递 postMessage
 
 跨文档消息传送（`cross-document messaging`），有时候简称为 `XDM`，指的是在来自**不同域的页面间**传递消息。
 
@@ -1884,7 +1884,7 @@ window.addEventListener("message", function(event) {
  });
 ```
 
-##### 拖放事件
+### 拖放事件
 
 - **拖动某元素时，将依次触发下列事件，事件的目标都是被拖动的元素**
   (1) `dragstart` 按下鼠标键并开始移动鼠标时，会在被拖放的元素上触发 dragstart 事件。
@@ -1936,9 +1936,9 @@ window.addEventListener("message", function(event) {
   })
   ```
 
-#### JSON
+## JSON
 
-##### JSON.stringify(value [, filter [, space]])
+### JSON.stringify(value [, filter [, space]])
 
 参数说明：
 
@@ -1985,7 +1985,7 @@ const obj = { 
 JSON.stringify(obj);  // 'htl'
 ```
 
-##### JSON.parse(text[, reviver])
+### JSON.parse(text[, reviver])
 
 参数说明：
 
@@ -2010,7 +2010,7 @@ const p = JSON.parse(text, (key,val) => {
 
 ```
 
-##### 自定义事件
+### 自定义事件
 
 事件是一种叫做观察者的设计模式，这是一种创建松散耦合代码的技术。观察者模式由两类对象组成：**主体**和**观察者**。主体负责发布事件，同时观察者通过订阅这些事件来观察该主体。该模式的一个关键概念是主体并不知道观察者的任何事情，也就是说它可以独自存在并正常运作即使观察者不存在。涉及 `DOM`上时，`DOM` 元素便是主体，你的事件处理代码便是观察者。
 
@@ -2060,7 +2060,7 @@ testEvent.addEvent('myFn',fn);  // 订阅 ‘myFn’事件，来观察主体
 testEvent.fire('myFn');  // 主体发布事件
 ```
 
-#### 离线应用与客户端存储（离线应用即将废弃）
+## 离线应用与客户端存储（离线应用即将废弃）
 
 `HTML5`为此定义了一个`navigator.onLine`属性，这个属性值为 `true` 表示设备能上网，值为 `false` 表示设备离线。这个属性的关键是浏览器必须知道设备能否访问网络，从而返回正确的值。
 
@@ -2070,7 +2070,7 @@ testEvent.fire('myFn');  // 主体发布事件
 
 **indexedDB** 前端数据库 ，参考阮一峰文章：[http://www.ruanyifeng.com/blog/2018/07/indexeddb.html](http://www.ruanyifeng.com/blog/2018/07/indexeddb.html)
 
-#### Page Visibility API
+## Page Visibility API
 
 - `document.hidden`：表示页面是否隐藏的布尔值。页面隐藏包括页面在后台标签页中或者浏览
   器最小化。
@@ -2085,7 +2085,7 @@ testEvent.fire('myFn');  // 主体发布事件
   });
   ```
 
-#### Geolocation API
+## Geolocation API
 
 `Geolocation API` 在浏览器中的实现是 `navigator.geolocation` 对象，这个对象包含 3 个方法。
 
@@ -2110,7 +2110,7 @@ testEvent.fire('myFn');  // 主体发布事件
 
       ```
 
-#### FileReader 类型
+## FileReader 类型
 
 提供如下实例方法如下：
 
@@ -2124,31 +2124,31 @@ testEvent.fire('myFn');  // 主体发布事件
 提供了三个事件：
 三个事件是`progress`、`error` 和 `load`，分别表示是否又读取了新数据、是否发生了错误以及是否已经读完了整个文件。
 
-#### 对象 URL
+## 对象 URL
 
 对象 `URL` 也被称为 `blob URL`，指的是引用保存在 `File` 或 `Blob` 中数据的 `URL`。使用对象 `URL` 的好处是可以不必把文件内容读取到 `JavaScript` 中而直接使用文件内容。为此，只要在需要文件内容的地方提供对象 `URL` 即可。要创建对象 `URL`，可以使用 `window.URL.createObjectURL()`方法，并传入`File` 或 `Blob` 对象。
 
 与之对应的，释放对象`URL` 方法为 `window.URL.revokeOjbectURL( url )`，参数接收需要释放内存的对象`URL`
 
-#### Web Workers
+## Web Workers
 
 查考阮一峰文章：[http://www.ruanyifeng.com/blog/2018/07/web-worker.html](http://www.ruanyifeng.com/blog/2018/07/web-worker.html)
 
-#### TypeScript
+## TypeScript
 
 `interface` 定义的接口名称可以重复（和类名重复也行），默认是合并约束效果。`type` 定义类型则不能重名。
 
-#### 浏览器进程线程关系
+## 浏览器进程线程关系
 
 <img :src="$withBase('/imgs/21.png')">
 
 > 具体请查阅：[https://segmentfault.com/a/1190000012925872](https://segmentfault.com/a/1190000012925872)
 
-#### 压测工具
+## 压测工具
 
 <img :src="$withBase('/imgs/22.png')">
 
-#### CDN 加速原理
+## CDN 加速原理
 
 1、全局负载均衡：通过智能调度`dns`，让客户端去访问最佳的`cdn`节点
 2、缓存：命中率越高，回源率越低，则缓存效果越好。（命中率：是指在`cdn`节点之接能拿到资源的几率。回源率：是指`cdn`节点无资源，需要从源站点获取资源的几率）
@@ -2159,9 +2159,9 @@ testEvent.fire('myFn');  // 主体发布事件
 **使用 CDN** ：
 <img :src="$withBase('/imgs/24.png')">
 
-#### 迭代器与生成器
+## 迭代器与生成器
 
-##### 迭代器
+### 迭代器
 
 很多内置类型都实现了 `Iterable` 接口（属性必须使用特殊的 `Symbol.iterator` 作为键）:
 
@@ -2216,7 +2216,7 @@ for (let item of iter ) { console.log(item); } // 3、1、4
 
 `return()`方法必须返回一个有效的 `IteratorResult` 对象。简单情况下，可以只返回`{ done: true }`。
 
-##### 生成器
+### 生成器
 
 生成器的形式是一个函数，函数名称前面加一个星号（ \* ）表示它是一个生成器。调用生成器函数会产生一个生成器对象。与迭代器相似，生成器对象也实现了 `Iterator` 接口，因此具有 `next()` 。
 `yield` 关键字可以让生成器停止和开始执行，也是生成器最有用的地方。遇到这个关键字后，执行会停止，函数作用域的状态会被保留。停止执行的生成器函数只能通过在生成器对象上调用 `next()` 方法来恢复执行。
@@ -2303,9 +2303,9 @@ console.log(f); // fn {<suspended>} f.throw('is fail');
 console.log(f); // fn {<closed>}
 ```
 
-#### Promise
+## Promise
 
-##### 实例方法：
+### 实例方法：
 
 - `then()`
 - `catch()`
@@ -2313,7 +2313,7 @@ console.log(f); // fn {<closed>}
 
 **pis：** 这些实例方法的返回值都是一个新的`promise`。因为`finally` 跟状态无关，所以它的返回值没有任何意义的，最终都是对父 promise 结果的一中传递。
 
-##### 静态方法：
+### 静态方法：
 
 - `Promise.resolve()`
 - `Promise.reject()`

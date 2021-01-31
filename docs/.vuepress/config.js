@@ -18,9 +18,20 @@ module.exports = {
     sidebar: {
       '/base/': [
         {
-          title: '基础',
-          collapsable: true,
-          children: ['', 'css', 'browser', 'skills', 'question']
+          title: '内功心法',
+          children: ['']
+        },
+        {
+          title: '乾坤大挪移',
+          children: ['css', 'browser']
+        },
+        {
+          title: '九阳神功',
+          children: ['skills']
+        },
+        {
+          title: '武林大会',
+          children: ['question']
         }
       ]
     }
