@@ -1430,7 +1430,8 @@ alert(object.getNameFunc()()); //"My Object"
   `scrollTop`：被隐藏在内容区域上方的像素数。通过设置这个属性可以改变元素的滚动位置（容器上设置）。
 
   <img :src="$withBase('/imgs/15.jpg')">
-  **`scrollWidth` 和 `scrollHeight` 与 `clientWidth` 和 `clientHeight` 区别：**
+
+  **`scrollWidth`** 和 **`scrollHeight`** 与 **`clientWidth`** 和 **`clientHeight`** 区别：
 
   在不需要滚动的文档上是分不清的。如果文档尺寸超过视口尺寸，则在所有主流浏览器中这两对属性都不相等，`scrollWidth` 和 `scollHeight` 等于文档内容的宽度，而 `clientWidth` 和 `clientHeight` 等于视口的大小。
 
