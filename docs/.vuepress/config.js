@@ -23,7 +23,7 @@ module.exports = {
         },
         {
           title: '乾坤大挪移',
-          children: ['css', 'browser']
+          children: ['css', 'browser','network']
         },
         {
           title: '九阳神功',
